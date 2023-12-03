@@ -17,7 +17,8 @@ return new class extends Migration
             $table->decimal('price', 8, 2);
             $table->text('description');
             $table->integer('quantity')->nullable();
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
     }
 
